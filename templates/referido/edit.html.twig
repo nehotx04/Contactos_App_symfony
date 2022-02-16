@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Referido{% endblock %}
+
+{% block body %}
+    <h1>Edit Referido</h1>
+
+    {{ include('referido/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('referido_index') }}">back to list</a>
+
+    {{ include('referido/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Referido index{% endblock %}
+
+{% block body %}
+    <h1>Referido index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for referido in referidos %}
+            <tr>
+                <td>{{ referido.id }}</td>
+                <td>{{ referido.name }}</td>
+                <td>
+                    <a href="{{ path('referido_show', {'id': referido.id}) }}">show</a>
+                    <a href="{{ path('referido_edit', {'id': referido.id}) }}">edit</a>
+                    <a href="{{ path('referido_delete', {'id': referido.id}) }}">delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('referido_new') }}">Create new</a>
+{% endblock %}

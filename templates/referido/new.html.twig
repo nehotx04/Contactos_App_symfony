@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Referido{% endblock %}
+
+{% block body %}
+    <h1>Create new Referido</h1>
+
+    {{ include('referido/_form.html.twig') }}
+
+    <a href="{{ path('referido_index') }}">back to list</a>
+{% endblock %}
